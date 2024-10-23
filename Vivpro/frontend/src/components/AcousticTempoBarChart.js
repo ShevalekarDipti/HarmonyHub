@@ -10,16 +10,15 @@ import {
   Legend,
 } from 'chart.js';
 
-// Register the necessary components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const AcousticTempoBarChart = ({ data }) => {
-  // Extract acousticness and tempo values, as well as song titles
+  
   const acousticData = data.map((song) => song.acousticness);
   const tempoData = data.map((song) => song.tempo);
   const songTitles = data.map((song) => song.title);
 
-  const acousticChartData = {
+  const chartData = {
     labels: songTitles,
     datasets: [
       {
@@ -28,12 +27,6 @@ const AcousticTempoBarChart = ({ data }) => {
         backgroundColor: 'rgba(255, 99, 132, 0.6)',
         barThickness: 15,
       },
-    ],
-  };
-
-  const tempoChartData = {
-    labels: songTitles,
-    datasets: [
       {
         label: 'Tempo',
         data: tempoData,
@@ -82,10 +75,8 @@ const AcousticTempoBarChart = ({ data }) => {
 
   return (
     <div>
-      <h3>Acousticness Bar Chart</h3>
-      <Bar data={acousticChartData} options={options} />
-      <h3>Tempo Bar Chart</h3>
-      <Bar data={tempoChartData} options={options} />
+      <h3>Acousticness and Tempo Bar Chart</h3>
+      <Bar data={chartData} options={options} />
     </div>
   );
 };
