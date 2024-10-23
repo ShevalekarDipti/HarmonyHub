@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import './App.css';
 import Rating from '@mui/material/Rating';
 import DanceabilityScatterChart from './components/DanceabilityScatterChart';
+import AcousticTempoBarChart from './components/AcousticTempoBarChart';
 
 function App() {
   const [data, setData] = useState({ rows: [], columns: [] });
@@ -210,11 +211,17 @@ function App() {
           pageSizeOptions={[10]}
         />
       </div>
-      <h2>Charts</h2>
+      <h2>Scatter Charts</h2>
       {data.rows.length > 0 ? (
         <DanceabilityScatterChart data={data.rows} />
       ) : (
         <div>No data available for the chart.</div>
+      )}
+      
+      {data.rows.length > 0 ? (
+        <AcousticTempoBarChart data={data.rows} />
+      ) : (
+        <div>No data available for the Acousticness and Tempo chart.</div>
       )}
     </div>
   );
