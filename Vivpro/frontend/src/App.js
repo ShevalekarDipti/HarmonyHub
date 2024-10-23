@@ -4,6 +4,7 @@ import './App.css';
 import Rating from '@mui/material/Rating';
 import DanceabilityScatterChart from './components/DanceabilityScatterChart';
 import AcousticTempoBarChart from './components/AcousticTempoBarChart';
+import DurationHistogram from './components/DurationHistogram';
 
 function App() {
   const [data, setData] = useState({ rows: [], columns: [] });
@@ -222,6 +223,12 @@ function App() {
         <AcousticTempoBarChart data={data.rows} />
       ) : (
         <div>No data available for the Acousticness and Tempo chart.</div>
+      )}
+       <h2>Duration Histogram</h2>
+      {data.rows.length > 0 ? (
+        <DurationHistogram data={data.rows} />
+      ) : (
+        <div>No data available for the Duration Histogram.</div>
       )}
     </div>
   );

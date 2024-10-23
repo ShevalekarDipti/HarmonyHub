@@ -2,11 +2,10 @@ import React from 'react';
 import { Scatter } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, Tooltip, Legend } from 'chart.js';
 
-// Register necessary components for Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, Tooltip, Legend);
 
 const DanceabilityScatterChart = ({ data }) => {
-  // Prepare the data for the scatter chart
+  
   const scatterData = {
     datasets: [
       {
@@ -36,8 +35,8 @@ const DanceabilityScatterChart = ({ data }) => {
           display: true,
           text: 'Danceability',
         },
-        min: 0, // Set minimum value for y-axis
-        max: 1, // Set maximum value for y-axis
+        min: 0, 
+        max: 1, 
       },
     },
     plugins: {
