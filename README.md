@@ -49,18 +49,18 @@
 
 9. References : 
     
-    a. Flask Testing: https://flask.palletsprojects.com/en/2.0.x/testing/
-    b. pytest Fixtures: https://docs.pytest.org/en/stable/fixture.html
-    c. Flask Test Clients: https://flask.palletsprojects.com/en/2.0.x/testing/#the-test-client
-    d. Flask Error Handling: https://flask.palletsprojects.com/en/2.0.x/errorhandling/
-    e. Pandas DataFrame Filtering: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html
-    f. Pandas .iloc: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html
-    g. REST API Pagination: https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design#pagination
-    h. Flask Pagination Examples: https://flask.palletsprojects.com/en/2.0.x/patterns/pagination/
-    i. React Chart.js 2 Documentation: https://react-chartjs-2.js.org/
-    j. Chart.js GitHub Repository: https://github.com/chartjs/Chart.js
-    k. Tutorial on Using Chart.js with React: https://blog.logrocket.com/how-to-use-chart-js-in-react/
-    l. Material UI: https://mui.com/x/react-data-grid/editing/
-    m. Material UI: Pagination: https://mui.com/x/react-data-grid/pagination/
-    n. Flask Tutorial - Building a REST API: https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
-    o. Stackoverflow - https://stackoverflow.com/
+    a. Flask Testing: https://flask.palletsprojects.com/en/2.0.x/testing/ <br>
+    b. pytest Fixtures: https://docs.pytest.org/en/stable/fixture.html <br>
+    c. Flask Test Clients: https://flask.palletsprojects.com/en/2.0.x/testing/#the-test-client <br>
+    d. Flask Error Handling: https://flask.palletsprojects.com/en/2.0.x/errorhandling/ <br>
+    e. Pandas DataFrame Filtering: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html <br>
+    f. Pandas .iloc: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html <br>
+    g. REST API Pagination: https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design#pagination <br>
+    h. Flask Pagination Examples: https://flask.palletsprojects.com/en/2.0.x/patterns/pagination/ <br>
+    i. React Chart.js 2 Documentation: https://react-chartjs-2.js.org/ <br>
+    j. Chart.js GitHub Repository: https://github.com/chartjs/Chart.js <br>
+    k. Tutorial on Using Chart.js with React: https://blog.logrocket.com/how-to-use-chart-js-in-react/ <br>
+    l. Material UI: https://mui.com/x/react-data-grid/editing/ <br>
+    m. Material UI: Pagination: https://mui.com/x/react-data-grid/pagination/ <br>
+    n. Flask Tutorial - Building a REST API: https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask <br>
+    o. Stackoverflow - https://stackoverflow.com/ <br>
