@@ -1,53 +1,63 @@
 import json
 import pandas as pd
-from collections import OrderedDict
 
 def load_json(file_path):
+    # Load JSON data from the specified file path
     with open(file_path, 'r') as file:
         data = json.load(file)
     return data
 
-def escape_slashes(value):
-    """
-    Ensures that slashes in the string are escaped properly.
-    """
+
+# The titles such as 24\/7 were not getting normalized correctly because the / was interpreted as an escape character
+# To resolve that issue, replace / with \/ so that the real string is considered and not interpreted as an escape character
+def avoid_slash(value):
     if isinstance(value, str):
-        return value.replace("/", "\\/")  # Replace `/` with `\/` to preserve the backslash
+        # isinstance(): This is a Python function that checks if a given object is an instance of a given type
+        return value.replace("/", "\\/") 
     return value
 
 def normalize_data(json_data):
+    #empty dict- used to store the normalized data
     normalized_data = []
-    key_order = list(json_data.keys())  # Store original key order
+    
+    # converting the keys in the json_data i.e the json file to a list 
+    key_order = list(json_data.keys())
 
+    # looping through the id to track the data and normalize it
     for i in range(len(json_data['id'])):
-        normalized_item = OrderedDict()  # Use OrderedDict instead of dict
-        
-        # Assign the index based on the iteration
-        normalized_item['index'] = i  # This will give you the index based on the loop
+        normalized_item = {}
+        #additional line to add the index column this is based on loop
 
-        for key in key_order:  # Use the stored key order
-            # Apply escape_slashes to title field or any field that contains slashes
+        #normalize_row['id']=i+1
+        normalized_item['index'] = i
+
+        for key in key_order:
+            # additional measure is taken to avoid the slashes even if in any other column than title
             if key == 'title':  
-                normalized_item[key] = escape_slashes(json_data[key][str(i)])
+                normalized_item[key] = avoid_slash(json_data[key][str(i)])
             else:
                 normalized_item[key] = json_data[key][str(i)]
 
-        # Appending a new column called ratings so in future when the user gives rating it will be stored
-        # I have kept the default value as 0 so that the user sees no ratings initially
+        # Appending a new column called rating so that when the user gives a rating, it will be stored
+        # The default value is set to 0, so the user initially sees no ratings
         normalized_item['rating'] = 0
         normalized_data.append(normalized_item)
     
-    # Append 'rating' to key_order if it does not exist
+    # Adding the  'rating' column  to keys if it does not exist
     if 'rating' not in key_order:
         key_order.append('rating')
     
-    # Ensure the DataFrame uses the updated key order including 'index'
-    df = pd.DataFrame(normalized_data, columns=['index'] + key_order)  # Include 'index' in the columns
-    # Store the key order as an attribute of the DataFrame to maintain the order
+    df = pd.DataFrame(normalized_data, columns=['index'] + key_order)  # Including the index in the columns 
+    
     df.attrs['key_order'] = key_order
     return df
 
 if __name__ == '__main__':
+    
     json_data = load_json('playlist[76][36][48][6].json')
+    
+  
     normalized_df = normalize_data(json_data)
-    print(normalized_df)
+    
+    # Printing the DataFrame to check the output
+   # print(normalized_df)
