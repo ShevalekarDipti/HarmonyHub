@@ -83,7 +83,7 @@ def rate_song(song_id):
         if song_id not in normalized_data['id'].values:
             return jsonify({'Error_occured': 'Song does not exist'}), 404
 
-        # Find the song by its ID and update its rating
+        # Finding the song by its ID and update its rating
         index = normalized_data.index[normalized_data['id'] == song_id].tolist()[0]
         normalized_data.at[index, 'rating'] = new_rating
         
