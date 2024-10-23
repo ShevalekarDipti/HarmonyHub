@@ -1,6 +1,8 @@
 node_modules
 scripts/flow/*/.flowconfig
 .flowconfig
+venv/
+
 *~
 *.pyc
 .grunt
